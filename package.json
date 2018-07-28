@@ -13,15 +13,16 @@
     "video.js": "^7.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test --env=jsdom"
   },
   "devDependencies": {
+    "copy-webpack-plugin": "^4.5.2",
     "husky": "^1.0.0-rc.13",
     "lint-staged": "^7.2.0",
-    "prettier": "1.13.7"
+    "prettier": "1.13.7",
+    "react-app-rewired": "^1.5.2"
   },
   "husky": {
     "hooks": {

@@ -13,3 +13,12 @@
   font-size: 30px;
   margin-top: 40vh;
 }
+
+body {
+  margin: 0;
+}
+
+.App,
+.drop {
+  margin: 20px;
+}

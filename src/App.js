@@ -41,17 +41,18 @@ class App extends Component {
       const videoJsOptions = {
         autoplay: true,
         controls: true,
-        sources: [{
-          src: this.state.video,
-          type: 'video/webm'
-        }],
+        fluid: true,
+        sources: [
+          {
+            src: this.state.video,
+            type: "video/webm"
+          }
+        ],
         subtitle: this.state.subtitle,
         fonts: this.state.fonts
       };
       console.log(videoJsOptions);
-      return (
-        <VideoPlayer { ...videoJsOptions } />
-      )
+      return <VideoPlayer {...videoJsOptions} />;
     } else {
       const loading = this.state.loading ? <Loading /> : "";
       return (
@@ -59,13 +60,30 @@ class App extends Component {
           {loading}
           <h1>Web-based MKV Player with ASS/SSA subtitle</h1>
           <Dropzone onDrop={this.onDrop}>
-            <p>Drop a file or click here to select a file.</p>
+            <p className="drop">Drop a file or click here to select a file.</p>
           </Dropzone>
           <p>
-            All decoding is done locally on your computer. No files are uploaded.
+            All decoding is done locally on your computer. No files are
+            uploaded.
           </p>
-          <p>Made with XXX</p>
-          <p>Want a better UI? Contribute now!</p>
+          <p>
+            Local caching is performed. You may access this website even without
+            Internet access.
+          </p>
+          <p>
+            Made with <a href="https://reactjs.org/">React</a>,{" "}
+            <a href="https://videojs.com/">video.js</a>,{" "}
+            <a href="https://github.com/themasch/node-ebml">node-ebml</a>,{" "}
+            <a href="https://github.com/qgustavor/mkv-extract">mkv-extract</a>{" "}
+            and{" "}
+            <a href="https://github.com/Dador/JavascriptSubtitlesOctopus">
+              SubtitlesOctopus
+            </a>.
+          </p>
+          <p>
+            Want a better UI?{" "}
+            <a href="https://github.com/pawitp/mkv-player">Contribute now!</a>
+          </p>
         </div>
       );
     }
