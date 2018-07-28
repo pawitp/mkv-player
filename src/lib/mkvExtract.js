@@ -78,7 +78,7 @@ function handleStream(stream, callback) {
           const timecode = readUnsignedInteger(padZeroes(chunk[1].data));
           currentTimecode = timecode;
         }
-        if (chunk[1].name === "BlockDuration") {
+        if (chunk[1].name === "BlockDuration" && trackIndex !== -1) {
           // the duration is in milliseconds
           const duration = readUnsignedInteger(padZeroes(chunk[1].data));
           trackData[trackIndex].push(duration);

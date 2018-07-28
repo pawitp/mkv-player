@@ -21,7 +21,7 @@ class App extends Component {
         let subtitle;
         const fonts = [];
         for (let f of files) {
-          if (f.name.endsWith(".ass") || f.name.endsWith(".ssa"))
+          if ((f.name.endsWith(".ass") || f.name.endsWith(".ssa")) && !subtitle)
             subtitle = URL.createObjectURL(new Blob([f.data]));
           else if (f.name.endsWith(".ttf"))
             fonts.push(URL.createObjectURL(new Blob([f.data])));
