@@ -1,0 +1,37 @@
+{
+  "name": "mkv-player",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "JavascriptSubtitlesOctopus": "https://github.com/Dador/JavascriptSubtitlesOctopus#df5e8e06aa21190a0cde5dd32edc868e86f6a2c0",
+    "ebml": "https://github.com/pawitp/node-ebml#25141f208b0d3308376b799c5853491c9f84fbda",
+    "filereader-stream": "^2.0.0",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-dropzone": "^4.2.13",
+    "react-scripts": "1.1.4",
+    "video.js": "^7.1.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "husky": "^1.0.0-rc.13",
+    "lint-staged": "^7.2.0",
+    "prettier": "1.13.7"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  }
+}

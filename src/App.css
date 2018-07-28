@@ -1,0 +1,15 @@
+.loading {
+  position: fixed;
+  background-color: black;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.loading p {
+  text-align: center;
+  color: white;
+  font-size: 30px;
+  margin-top: 40vh;
+}
