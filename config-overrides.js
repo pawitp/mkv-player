@@ -6,8 +6,7 @@ module.exports = function override(config, env) {
     new CopyWebpackPlugin([
       {
         context:
-          path.resolve(__dirname, "node_modules") +
-          "/JavascriptSubtitlesOctopus/js/wasm",
+          path.resolve(__dirname, "node_modules") + "/libass-wasm/dist/js",
         from: "*",
         to: "subtitles-octopus",
         ignore: "*.asm.js" // Not used

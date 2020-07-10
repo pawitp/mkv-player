@@ -3,14 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "JavascriptSubtitlesOctopus": "https://github.com/Dador/JavascriptSubtitlesOctopus#df5e8e06aa21190a0cde5dd32edc868e86f6a2c0",
-    "ebml": "https://github.com/pawitp/node-ebml#25141f208b0d3308376b799c5853491c9f84fbda",
+    "ebml": "2.2.4",
     "filereader-stream": "^2.0.0",
+    "libass-wasm": "https://github.com/Dador/JavascriptSubtitlesOctopus#4.0.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-dropzone": "^4.2.13",
     "react-scripts": "1.1.4",
-    "video.js": "^7.1.0"
+    "video.js": "^7.8.4"
   },
   "scripts": {
     "start": "react-app-rewired start",
