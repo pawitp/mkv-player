@@ -84,6 +84,8 @@ function handleStream(stream, callback) {
           trackData[trackIndex].push(duration);
         }
         break;
+      default:
+        // do nothing
     }
     if (
       files[currentFile] &&
