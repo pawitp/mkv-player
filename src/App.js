@@ -13,6 +13,8 @@ class App extends Component {
     fonts: []
   };
 
+  dropZoneRef = React.createRef();
+
   onDrop = (accept, reject) => {
     if (accept.length > 0) {
       const file = accept[0];
@@ -35,6 +37,14 @@ class App extends Component {
       });
     }
   };
+
+  componentDidMount() {
+    const dropZone = this.dropZoneRef.current;
+    window.addEventListener("dragenter", dropZone.onDragEnter);
+    window.addEventListener("dragleave", dropZone.onDragLeave);
+    window.addEventListener("dragover", dropZone.onDragOver);
+    window.addEventListener("drop", dropZone.onDrop);
+  }
 
   render() {
     if (this.state.video) {
@@ -59,8 +69,10 @@ class App extends Component {
         <div className="App">
           {loading}
           <h1>Web-based MKV Player with ASS/SSA subtitle</h1>
-          <Dropzone onDrop={this.onDrop}>
-            <p className="drop">Drop a file or click here to select a file.</p>
+          <Dropzone onDrop={this.onDrop} ref={this.dropZoneRef}>
+            <p className="drop">
+              Drop a file anywhere on this page or click here to select a file.
+            </p>
           </Dropzone>
           <p>
             All decoding is done locally on your computer. No files are
